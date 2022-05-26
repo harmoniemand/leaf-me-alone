@@ -1,0 +1,62 @@
+
+@keyframes fade {
+    from {color: rgba(0,0,0,0);}
+    to {color: rgba(0,0,0,0.5);}
+  }
+
+.settings {
+    background: #efefef; 
+    height: 100vh; 
+    overflow: scroll;
+    font-family: 'DIN OT';
+
+    h1 {
+        margin-top: 2rem;
+        padding-left: 2rem;
+
+        .subtitle {
+            color: rgba(0,0,0,0);
+            animation-name: fade;
+            animation-duration: 60s;
+        }
+
+    }
+
+    .settings-header {
+        line-height: 3rem;
+        background-color: rgba(0,0,0,0.1);
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .settings-body {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+
+
+        label {
+            line-height: 3rem;
+            margin-bottom: 0;
+        }
+
+        .input-group {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        input {
+            height: 3rem;
+
+            &[type="checkbox"] {
+                margin-top: 0.5rem;
+                width: 2rem;
+                height: 2rem;
+                margin-right: 2rem;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,174 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh;">
+
+    <div class="col-4 p-0 settings">
+
+      <h1>Leaf <span class="subtitle">(Me Alone)</span></h1>
+
+      <div class="mt-5">
+        <div class="settings-header">
+          leaves
+        </div>
+
+        <div class="settings-body">
+          <div class="row mb-3">
+            <label for="color_lines" class="form-label col-2 ">Color leaf</label>
+            <div class="input-group col">
+              <input type="text" class="form-control " placeholder="Username" aria-label="Username"
+                [(ngModel)]="color_lines">
+              <input type="color" style="height: 3rem; width: 3rem;" class="form-control" placeholder="Server"
+                aria-label="Server" [(ngModel)]="color_lines">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="color_leaf" class="form-label col-2">Color line</label>
+            <div class="input-group  col">
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                [(ngModel)]="color_leaf">
+              <input type="color" style="height: 3rem; width: 3rem;" class="form-control" placeholder="Server"
+                aria-label="Server" [(ngModel)]="color_leaf">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mt-5">
+
+        <div class="settings-header">
+          text
+        </div>
+
+        <div class="settings-body">
+
+
+          <div class="form-check mb-3" (click)="updateText($event)">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="show_text">
+            <label class="form-check-label" for="flexCheckDefault">
+              show text
+            </label>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="color_text" class="col-2 form-label">Color text</label>
+            <div class="input-group col">
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                [(ngModel)]="color_text">
+              <input type="color" style="height: 3rem; width: 3rem;" class="form-control" placeholder="Server"
+                aria-label="Server" [(ngModel)]="color_text">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-2 form-label">Text</label>
+            <textarea class="form-control col" id="exampleInputEmail1" aria-describedby="emailHelp"
+              [(ngModel)]="text"></textarea>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="font_family" class="form-label col-2">font family</label>
+            <input type="text" class="form-control col" id="font_family" aria-describedby="font_family"
+              [(ngModel)]="font_family">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="font_weight" class="form-label col-2">font weight</label>
+            <input type="text" class="form-control col" id="font_weight" aria-describedby="font_weight"
+              [(ngModel)]="font_weight">
+          </div>
+
+
+          <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="form-label col-2">Text</label>
+            <input type="number" class="form-control col" id="exampleInputEmail1" aria-describedby="emailHelp"
+              [(ngModel)]="fontSize">
+          </div>
+
+
+          <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="form-label col-2">textOffsetX</label>
+            <input type="number" class="form-control col" id="exampleInputEmail1" aria-describedby="emailHelp"
+              [(ngModel)]="textOffsetX">
+          </div>
+
+          <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="form-label col-2">textOffsetY</label>
+            <input type="number" class="form-control col" id="exampleInputEmail1" aria-describedby="emailHelp"
+              [(ngModel)]="textOffsetY">
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="mt-5">
+
+        <div class="settings-header">
+          text shadow
+        </div>
+
+        <div class="settings-body">
+
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="show_text_shadow"
+              [(ngModel)]="show_text_shadow">
+            <label class="form-check-label" for="show_text_shadow">
+              show text shadow
+            </label>
+          </div>
+
+
+          <div class="mb-3 row">
+            <label for="color_text_shadow" class="col-2 form-label">color</label>
+            <div class="input-group col">
+              <input type="text" class="form-control" placeholder="color_text_shadow" aria-label="color_text_shadow"
+                [(ngModel)]="color_text_shadow">
+              <input type="color" style="height: 3rem; width: 3rem;" class="form-control" placeholder="Server"
+                aria-label="Server" [(ngModel)]="color_text_shadow">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="text_shadow_width" class="col-2 form-label">width</label>
+            <input type="number" class="form-control col" id="text_shadow_width" aria-describedby="emailHelp"
+              [(ngModel)]="text_shadow_width">
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="mt-5">
+
+        <div class="settings-header">
+          anything else
+        </div>
+
+        <div class="settings-body">
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="show_cut_line" [(ngModel)]="show_cut_line">
+            <label class="form-check-label" for="show_cut_line">
+              show cut line
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 mb-5">
+        <div class="settings-body">
+          <button type="submit" class="btn btn-primary w-100 mb-3" (click)="setVariables()">Create New Leaf</button>
+          <button type="submit" class="btn btn-primary w-100" (click)="downloadAsSVG()">Download SVG</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col d-flex p-5 justify-content-center align-items-center">
+      <canvas #myCanvas style="width: 793px; height: 1122px; background-color: #fff;"></canvas>
+      <!-- <canvas #myCanvas [ngStyle]="{ width: canvasWidth, height: canvasHeight }" style="background-color: #fff;"></canvas> -->
+    </div>
+
+  </div>
+</div>
